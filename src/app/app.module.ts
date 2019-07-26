@@ -10,6 +10,8 @@ import { HomeModule } from './home';
 import { registerLocaleData } from '@angular/common';
 // import { ScrollableTabComponent, HorizontalGridComponent, ImageSliderComponent } from './components';
 import localeZh from '@angular/common/locales/zh-Hans';
+import { RecommendModule } from './recommend';
+import { MyModule } from './my';
 
 @NgModule({
    declarations: [AppComponent],
@@ -18,6 +20,8 @@ import localeZh from '@angular/common/locales/zh-Hans';
       AppRoutingModule,
       SharedModule,
       HomeModule,
+      RecommendModule,
+      MyModule,
       HttpClientModule,
    ],
    providers: [{ provide: LOCALE_ID, useValue: 'zh-Hans' }],
