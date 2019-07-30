@@ -1,6 +1,8 @@
 <app-scrollable-tab
-  [menus]="topMenus$ | async"
-  (tabSelected)="handleTabSelected($event)"
-  [selectedTabLink]="selectedTabLink$ | async"
+   [menus]="topMenus$ | async"
+   (tabSelected)="handleTabSelected($event)"
+   [selectedTabLink]="selectedTabLink$ | async"
 ></app-scrollable-tab>
-<router-outlet></router-outlet>
+<div class="main">
+   <router-outlet></router-outlet>
+</div>

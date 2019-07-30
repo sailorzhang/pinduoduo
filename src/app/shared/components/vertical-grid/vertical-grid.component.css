@@ -1,0 +1,12 @@
+.grid-container {
+   background-color: #f5f5f5;
+   padding: 5px 0;
+   display: grid;
+   scroll-behavior: smooth;
+   -webkit-overflow-scrolling: touch;
+   overflow-x: hidden;
+   overflow-y: auto;
+   place-content: stretch;
+   place-items: center;
+   grid-auto-flow: row;
+}

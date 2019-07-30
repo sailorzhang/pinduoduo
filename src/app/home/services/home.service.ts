@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ImageSlider, Channel, TopMenu } from 'src/app/shared/components';
+import { ImageSlider, Channel, TopMenu, Ad, Product } from 'src/app/shared';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
    providedIn: 'root',
 })
 export class HomeService {
-   constructor(private http: HttpClient) {}
+   constructor(private http: HttpClient) { }
 
    imageSliders: ImageSlider[] = [
       {
@@ -244,26 +244,26 @@ export class HomeService {
    ];
 
    getBanners() {
-      return this.http.get<ImageSlider[]>(`${environment.baseUrl}/banners`, {
-         params: {
-            icode: environment.icode,
-         },
-      });
+      return this.http.get<ImageSlider[]>(`${environment.baseUrl}/banners`);
    }
 
    getChannels() {
-      return this.http.get<Channel[]>(`${environment.baseUrl}/channels`, {
-         params: {
-            icode: environment.icode,
-         },
-      });
+      return this.http.get<Channel[]>(`${environment.baseUrl}/channels`);
    }
 
    getTabs() {
-      return this.http.get<TopMenu[]>(`${environment.baseUrl}/tabs`, {
-         params: {
-            icode: environment.icode,
-         },
+      return this.http.get<TopMenu[]>(`${environment.baseUrl}/tabs`);
+   }
+
+   getAdByTab(tab: string) {
+      return this.http.get<Ad[]>(`${environment.baseUrl}/ads`, {
+         params: { categories_like: tab }
       });
    }
+
+   getProductsByTab(tab: string) {
+      return this.http.get<Product[]>(`${environment.baseUrl}/products`, {
+        params: { categories_like: tab }
+      });
+    }
 }
