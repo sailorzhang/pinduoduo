@@ -9,7 +9,7 @@
 </div> -->
 
 <ng-container *ngIf="selectedTabLink$ | async as tab">
-   <ng-container *ngIf="tab === 'hot'; else other">
+   <ng-container *ngIf="tab === 'hot'">
       <app-image-slider [sliders]="imageSliders$ | async"></app-image-slider>
       <app-horizontal-grid>
          <span appGridItem *ngFor="let item of channels$ | async">
@@ -26,9 +26,7 @@
    <img [src]="ad.imageUrl" alt="" class="ad-image" />
 </div>
 
-<app-vertical-grid
-   [itemHeight]="'2rem'"
-   [itemWidth]="'20rem'"
->
-<div *ngFor="let product of products$ | async">{{ product.title }}</div>
+<app-vertical-grid [itemHeight]="'2rem'" [itemWidth]="'20rem'">
+   <app-product-card *ngFor="let product of products$ | async" [product]="product">
+   </app-product-card>
 </app-vertical-grid>
