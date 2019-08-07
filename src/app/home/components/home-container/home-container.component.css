@@ -3,6 +3,7 @@
    align-items: stretch;
    flex-direction: column;
    flex: 1;
+   overflow-y: auto;
 }
 
 .main {

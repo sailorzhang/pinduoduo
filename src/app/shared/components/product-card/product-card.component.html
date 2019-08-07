@@ -12,6 +12,13 @@
          <h3 class="price">{{ product.price }}</h3>
       </span>
       <span class="price-desc">{{ product.priceDesc }}</span>
-      <span class="price-avatar"></span>
+      <span class="price-avatar">
+         <img
+            appAvatar
+            *ngFor="let avatar of product.buyerAvatars; let idx = index"
+            [src]="avatar"
+            [ngStyle]="{ left: -10 * idx + 'px', 'z-index': 1000 - 10 * idx }"
+         />
+      </span>
    </div>
 </div>

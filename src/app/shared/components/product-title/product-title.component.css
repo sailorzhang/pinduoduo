@@ -1,0 +1,59 @@
+.container {
+   display: grid;
+   grid-template-areas:
+      'image'
+      'title'
+      'tag'
+      'price';
+   grid-template-rows: repeat(auto-fill, minmax(11rem, 1fr));
+   grid-template-columns: 1fr;
+   place-items: start;
+   place-content: stretch;
+   grid-gap: 5px;
+}
+.product-image {
+   width: 100%;
+   height: 100%;
+}
+
+.product-title {
+   font-size: 0.8rem;
+}
+
+.product-tags {
+}
+
+.product-price {
+    display: grid;
+    grid-template-areas: 'price-detail price-desc price-discover';
+    grid-template-columns: 25% 50% 25%;
+    gap: 3px;
+    place-content: stretch;
+    place-items: center;
+}
+
+.price-section {
+    color: #d24749;
+    margin: 0 1rem;
+    grid-area: price-detail;
+ }
+ 
+ .product-tags > span {
+    margin-right: 5px;
+ }
+ 
+ .price {
+    display: inline;
+    font-size: 0.9rem;
+    padding: 0;
+ }
+ 
+ .price-desc {
+    grid-area: price-desc;
+    color: #3f3f3f;
+    font-size: 0.7rem;
+ }
+
+ .price-discover{
+    grid-area: price-discover;
+ }
